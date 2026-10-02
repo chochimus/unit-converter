@@ -5,51 +5,79 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/styles.css">
-    <title>Document</title>
+    <title>Length Converter</title>
 </head>
 
 <body>
     <main>
         <%- include('partials/header') -%>
             <%- include('partials/nav') -%>
-                <form>
-                    <fieldset>
-                        <dl class="length">
-                            <dt><label for="length">Enter the length to convert</label></dt>
-                            <dd><input type="text" id="length" name="length"></dd>
-                        </dl>
-                        <dl class="convertFrom">
-                            <dt><label for="convertFrom">Unit to convert from</label></dt>
-                            <dd>
-                                <select id="convertFrom">
-                                    <option>miles</option>
-                                    <option>yards</option>
-                                    <option>feet</option>
-                                    <option>inches</option>
-                                    <option>kilometers</option>
-                                    <option>meters</option>
-                                    <option>centimeters</option>
-                                    <option>millimeters</option>
-                                </select>
-                            </dd>
-                        </dl>
-                        <dl class="convertTo">
-                            <dt><label for="convertTo">Unit to convert to</label></dt>
-                            <dd>
-                                <select id="convertTo">
-                                    <option>miles</option>
-                                    <option>yards</option>
-                                    <option>feet</option>
-                                    <option>inches</option>
-                                    <option>kilometers</option>
-                                    <option>meters</option>
-                                    <option>centimeters</option>
-                                    <option>millimeters</option>
-                                </select>
-                            </dd>
-                        </dl>
-                    </fieldset>
-                </form>
+
+                <% if (result !==undefined) { %>
+
+                    <section>
+                        <h2>Result</h2>
+                        <p>
+                            <%= length %>
+                                <%= convertFrom %> = <%= result %>
+                                        <%= convertTo %>
+                        </p>
+                    </section>
+
+                    <% } else { %>
+
+                        <form action="/length" method="post">
+                            <fieldset>
+                                <dl class="length">
+                                    <dt>
+                                        <label for="length">Enter the length to convert</label>
+                                    </dt>
+                                    <dd>
+                                        <input type="text" id="length" name="length">
+                                    </dd>
+                                </dl>
+
+                                <dl class="convertFrom">
+                                    <dt>
+                                        <label for="convertFrom">Unit to convert from</label>
+                                    </dt>
+                                    <dd>
+                                        <select id="convertFrom" name="convertFrom">
+                                            <option>miles</option>
+                                            <option>yards</option>
+                                            <option>feet</option>
+                                            <option>inches</option>
+                                            <option>kilometers</option>
+                                            <option>meters</option>
+                                            <option>centimeters</option>
+                                            <option>millimeters</option>
+                                        </select>
+                                    </dd>
+                                </dl>
+
+                                <dl class="convertTo">
+                                    <dt>
+                                        <label for="convertTo">Unit to convert to</label>
+                                    </dt>
+                                    <dd>
+                                        <select id="convertTo" name="convertTo">
+                                            <option>miles</option>
+                                            <option>yards</option>
+                                            <option>feet</option>
+                                            <option>inches</option>
+                                            <option>kilometers</option>
+                                            <option>meters</option>
+                                            <option>centimeters</option>
+                                            <option>millimeters</option>
+                                        </select>
+                                    </dd>
+                                </dl>
+
+                                <button type="submit">Convert</button>
+                            </fieldset>
+                        </form>
+
+                        <% } %>
     </main>
 </body>
 
