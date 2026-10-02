@@ -1,0 +1,75 @@
+* {
+    padding: 0;
+    margin: 0;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(235, 198, 149);
+}
+
+main {
+    margin-top: 3rem;
+    background-color: rgb(255, 255, 255);
+    box-sizing: border-box;
+    padding: 1rem 3rem 4rem 1rem;
+    border-radius: 0.5rem;
+    border: black 2px solid;
+}
+
+header {
+    margin-bottom: 0.5rem;
+}
+
+nav ul{
+    display: flex;
+    margin-bottom: 1rem;
+}
+li {
+    padding: 0.5rem;
+    list-style: none;
+}
+
+fieldset {
+    border: none;
+    box-sizing: border-box;
+    padding: 0.5rem;
+}
+
+dl {
+    width: 100%;
+}
+
+dl dd {
+    width: auto;
+}
+
+label {
+    font-size: 1rem;
+}
+
+input {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.4rem;
+}
+
+dt {
+    margin-top: 1rem;
+    margin-bottom: 0.25rem;
+}
+
+select {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 0.4rem;
+}
+
+button {
+    margin-top: 1rem;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+}
