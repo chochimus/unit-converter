@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import * as lengthController from './controllers/lengthController.ts';
 import * as weightController from './controllers/weightController.ts';
+import * as temperatureController from './controllers/temperatureController.ts';
 
 const app: Express = express();
 const port = 3000;
@@ -31,6 +32,11 @@ app.get('/weight', (req: Request, res: Response) => {
 
 app.post('/weight', weightController.weightPost);
 
+app.get('/temperature', (req: Request, res: Response) => {
+  res.render('temperature', {temperature: undefined, convertFrom: undefined, convertTo: undefined, result: undefined});
+})
+
+app.post('/temperature', temperatureController.temperaturePost);
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/styles.css">
+    <title>Unit Converter</title>
+</head>
+
+<body>
+    <main>
+        <%- include('partials/header') -%>
+            <%- include('partials/nav') -%>
+
+                <% if (result !==undefined) { %>
+
+                    <section>
+                        <h2>Result</h2>
+                        <p>
+                            <%= temperature %>
+                                <%= convertFrom %> = <%= result %>
+                                        <%= convertTo %>
+                        </p>
+                    </section>
+
+                    <% } else { %>
+
+                        <form action="/temperature" method="post">
+                            <fieldset>
+                                <dl class="temperature">
+                                    <dt>
+                                        <label for="temperature">Enter the temperature to convert</label>
+                                    </dt>
+                                    <dd>
+                                        <input type="text" id="temperature" name="temperature">
+                                    </dd>
+                                </dl>
+
+                                <dl class="convertFrom">
+                                    <dt>
+                                        <label for="convertFrom">Unit to convert from</label>
+                                    </dt>
+                                    <dd>
+                                        <select id="convertFrom" name="convertFrom">
+                                            <option value="celsius">Celsius</option>
+                                            <option value="fahrenheit">Fahrenheit</option>
+                                            <option value="kelvin">Kelvin</option>
+                                        </select>
+                                    </dd>
+                                </dl>
+
+                                <dl class="convertTo">
+                                    <dt>
+                                        <label for="convertTo">Unit to convert to</label>
+                                    </dt>
+                                    <dd>
+                                        <select id="convertTo" name="convertTo">
+                                            <option value="celsius">Celsius</option>
+                                            <option value="fahrenheit">Fahrenheit</option>
+                                            <option value="kelvin">Kelvin</option>
+                                        </select>
+                                    </dd>
+                                </dl>
+
+                                <button type="submit">Convert</button>
+                            </fieldset>
+                        </form>
+
+                        <% } %>
+    </main>
+</body>
+
+</html>
