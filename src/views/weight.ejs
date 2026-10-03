@@ -18,7 +18,7 @@
                     <section>
                         <h2>Result</h2>
                         <p>
-                            <%= length %>
+                            <%= weight %>
                                 <%= convertFrom %> = <%= result %>
                                         <%= convertTo %>
                         </p>
@@ -26,14 +26,14 @@
 
                     <% } else { %>
 
-                        <form action="/length" method="post">
+                        <form action="/weight" method="post">
                             <fieldset>
-                                <dl class="length">
+                                <dl class="weight">
                                     <dt>
-                                        <label for="length">Enter the length to convert</label>
+                                        <label for="weight">Enter the weight to convert</label>
                                     </dt>
                                     <dd>
-                                        <input type="text" id="length" name="length">
+                                        <input type="text" id="weight" name="weight">
                                     </dd>
                                 </dl>
 
@@ -43,14 +43,11 @@
                                     </dt>
                                     <dd>
                                         <select id="convertFrom" name="convertFrom">
-                                            <option>miles</option>
-                                            <option>yards</option>
-                                            <option>feet</option>
-                                            <option>inches</option>
-                                            <option>kilometers</option>
-                                            <option>meters</option>
-                                            <option>centimeters</option>
-                                            <option>millimeters</option>
+                                            <option>milligram</option>
+                                            <option>gram</option>
+                                            <option>kilogram</option>
+                                            <option>ounce</option>
+                                            <option>pound</option>
                                         </select>
                                     </dd>
                                 </dl>
@@ -61,14 +58,11 @@
                                     </dt>
                                     <dd>
                                         <select id="convertTo" name="convertTo">
-                                            <option>miles</option>
-                                            <option>yards</option>
-                                            <option>feet</option>
-                                            <option>inches</option>
-                                            <option>kilometers</option>
-                                            <option>meters</option>
-                                            <option>centimeters</option>
-                                            <option>millimeters</option>
+                                            <option>milligram</option>
+                                            <option>gram</option>
+                                            <option>kilogram</option>
+                                            <option>ounce</option>
+                                            <option>pound</option>
                                         </select>
                                     </dd>
                                 </dl>

@@ -18,6 +18,10 @@ function lengthPost(req: Request<{}, {}, LengthRequest>, res: Response) {
         !isLengthUnit(convertTo)
     ) {
         res.status(400).render('length', {
+            length: undefined,
+            convertFrom: undefined,
+            convertTo: undefined,
+            result: undefined,
             error: 'Invalid conversion input.'
         });
         return;

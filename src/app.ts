@@ -2,6 +2,7 @@ import express, { type Express, type Request, type Response } from 'express';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import * as lengthController from './controllers/lengthController.ts';
+import * as weightController from './controllers/weightController.ts';
 
 const app: Express = express();
 const port = 3000;
@@ -23,6 +24,13 @@ app.get('/length', (req: Request, res: Response) => {
 })
 
 app.post('/length', lengthController.lengthPost);
+
+app.get('/weight', (req: Request, res: Response) => {
+  res.render('weight', {weight: undefined, convertFrom: undefined, convertTo: undefined, result: undefined});
+})
+
+app.post('/weight', weightController.weightPost);
+
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`);
